@@ -1,0 +1,29 @@
+// Border
+
+@mixin border($side: null, $color: white) {
+  #{if($side, border-#{$side}, border)}: 1px solid $color;
+}
+
+// Element Bottom
+
+@mixin bottom($small: 20px, $medium: 30px) {
+	margin-bottom: $small;
+
+	@media #{$md} {
+		margin-bottom: $medium;
+	}
+}
+
+// Set Background Color and Hover
+
+@mixin setBgColorAndHover($baseColor: $primary-color) {
+    background-color: $baseColor;
+    
+    &.active {
+    	background-color: darken($baseColor, 10%)
+	}
+    
+    &:hover {
+    	background-color: darken($baseColor, 5%)
+	}
+}

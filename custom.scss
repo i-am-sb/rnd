@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('bootstrap.css');
+@import "temp.scss";
+
+
+$xs						: "(min-width: 320px)";			// Extra Small 
+$ms						: "(min-width: 480px)";			// Midium Small
+$sm						: "(min-width: 768px)";			// Small
+$md						: "(min-width: 992px)";			// Medium
+$lg						: "(min-width: 1200px)";		// Large
+
+body {
+	font-family: 'Raleway', sans-serif;
+	background-color: #ccc;
+	font-size: 14px;
+	@media #{$sm} {font-size: 16px;}
+	@media #{$md} {font-size: 18px;}
+}
+ul {
+	list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+// Border
+
+@mixin border($side: null, $color: white) {
+  #{if($side, border-#{$side}, border)}: 1px solid $color;
+}
+
+// em
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+// Bottom
+
+@mixin bottom($mb) {
+	margin-bottom: em($mb);
+	@media #{$md} { margin-bottom: em($mb + 10); }
+}
+
+// Element - Modifier
+
+@mixin e($element) {
+	&__#{$element} {
+		@content;
+	}
+}
+
+@mixin m($modifier){
+	&--#{$modifier}{
+		@content;
+	}
+}
+
+.page-wrapper {
+	background-color: #e8e8e8;
+}
+
+p {
+  font-size: em(16);
+}
+
+h1 {
+	font-size: em(24);
+}
+
+header {
+	@include bottom(20);
+	padding: em(16) 0;
+	background-color: blue;
+	color: white;
+}
+
+header, section, footer {
+	@include bottom(20);
+	//@include border();
+	//@include border(bottom, red);
+
+	.is {
+		@include bottom(20);
+	}
+	
+	.eg {
+		@include bottom(10);
+	}
+
+	&, p, table, ul, form, nav {
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+
+}
+
+.block {
+	display: block;
+	
+	&__element {
+		background-color: #f08;
+		
+		&--modifier {
+			border: 1px solid #666;
+		}
+	}
+}
+
+.menu {
+	background-color: yellow;
+	
+	@include e(list) {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		
+		@include m(item) {
+			padding: em(10) em(15);
+			background-color: #eee;
+			color: #666;
+			float: left;
+			line-height: 100%;
+			cursor: pointer; 
+			
+			&:hover {
+				background-color: red;
+				color: white;
+			}
+		}
+		
+		@include m(item-footer) {
+			&:hover {
+				background-color: blue;
+			}
+		}
+	}
+}
+
+.box {
+	@include bottom(20);
+	padding: em(10);
+	background-color: #f08;
+	color: white;
+	@include border(null, orange);
+}
+
+.message {
+	padding: em(4) em(8);
+	background-color: #eee;
+	border-radius: em(5);
+	
+	&:hover {
+		background-color: #ccc;
+	}
+}
+
+.info {
+	color: blue;
+}
+.warning {
+	color: orange;
+}
+.danger {
+	color: red;
+}
+
+.small {
+	font-size: em(10);
+}
+
+footer {
+	padding: em(15);
+	background-color: green;
+	color: white;
+
+	&, div, p, table, ul {
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+}

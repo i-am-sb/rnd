@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("bootstrap.css");
+.pull-right {
+  float: right;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #ccc;
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  background-color: #e8e8e8;
+}
+
+p {
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+header {
+  margin-bottom: 1.25em;
+  padding: 1em 0;
+  background-color: blue;
+  color: white;
+}
+@media (min-width: 992px) {
+  header {
+    margin-bottom: 1.875em;
+  }
+}
+
+header, section, footer {
+  margin-bottom: 1.25em;
+}
+@media (min-width: 992px) {
+  header, section, footer {
+    margin-bottom: 1.875em;
+  }
+}
+header .is, section .is, footer .is {
+  margin-bottom: 1.25em;
+}
+@media (min-width: 992px) {
+  header .is, section .is, footer .is {
+    margin-bottom: 1.875em;
+  }
+}
+header .eg, section .eg, footer .eg {
+  margin-bottom: 0.625em;
+}
+@media (min-width: 992px) {
+  header .eg, section .eg, footer .eg {
+    margin-bottom: 1.25em;
+  }
+}
+header:last-child, header p:last-child, header table:last-child, header ul:last-child, header form:last-child, header nav:last-child, section:last-child, section p:last-child, section table:last-child, section ul:last-child, section form:last-child, section nav:last-child, footer:last-child, footer p:last-child, footer table:last-child, footer ul:last-child, footer form:last-child, footer nav:last-child {
+  margin-bottom: 0 !important;
+}
+
+.block {
+  display: block;
+}
+.block__element {
+  background-color: #f08;
+}
+.block__element--modifier {
+  border: 1px solid #666;
+}
+
+.menu {
+  background-color: yellow;
+}
+.menu__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.menu__list--item {
+  padding: 0.625em 0.9375em;
+  background-color: #eee;
+  color: #666;
+  float: left;
+  line-height: 100%;
+  cursor: pointer;
+}
+.menu__list--item:hover {
+  background-color: red;
+  color: white;
+}
+.menu__list--item-footer:hover {
+  background-color: blue;
+}
+
+.box {
+  margin-bottom: 1.25em;
+  padding: 0.625em;
+  background-color: #f08;
+  color: white;
+  border: 1px solid orange;
+}
+@media (min-width: 992px) {
+  .box {
+    margin-bottom: 1.875em;
+  }
+}
+
+.message {
+  padding: 0.25em 0.5em;
+  background-color: #eee;
+  border-radius: 0.3125em;
+}
+.message:hover {
+  background-color: #ccc;
+}
+
+.info {
+  color: blue;
+}
+
+.warning {
+  color: orange;
+}
+
+.danger {
+  color: red;
+}
+
+.small {
+  font-size: 0.625em;
+}
+
+footer {
+  padding: 0.9375em;
+  background-color: green;
+  color: white;
+}
+footer:last-child, footer div:last-child, footer p:last-child, footer table:last-child, footer ul:last-child {
+  margin-bottom: 0 !important;
+}
